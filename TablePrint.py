@@ -10,19 +10,19 @@ print(colWidths)
 
 def printTable(tableData):
     colWidths = [0] * len(tableData)
-    print(colWidths)
+    #print(colWidths)
 
     for col in range(len(colWidths)):
         for i in tableData[col]:
             if len(i) > colWidths[col]:
                 colWidths[col] = len(i)
-                print(colWidths)
+                #print(colWidths)
 
     for item in range(len(tableData[0])):
-        for term in range(len(colWidths)):
-            print(list(zip(*tableData))[item])
-        print(list(zip(*tableData))[item])
-        print(list)
-
+        tempList = (list(zip(*tableData))[item])
+        count = 0
+        print((tempList[count]).rjust(colWidths[count]) + ' ' + (tempList[count+1]).rjust(colWidths[count+1]) + ' ' + (tempList[count+2]).rjust(colWidths[count+2]))
+        count =+ 1
+        
 printTable(tableData)
 
